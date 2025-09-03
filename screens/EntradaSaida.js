@@ -9,6 +9,11 @@ export default function EntradaSaida() {
     setOutput(input.toUpperCase());
   };
 
+  const limparDados = () => {
+    setInput('');
+    setOutput('');
+  }
+
   return (
     <View style={styles.container}>
       <TextInput
@@ -17,8 +22,13 @@ export default function EntradaSaida() {
         value={input}
         onChangeText={setInput}
       />
-      <Button title="Processar" onPress={processarDados} />
-      <Text>Saída: {output}</Text>
+      <View style={styles.buttonsContainer}>
+        <Button title="Processar" onPress={processarDados} />
+        <Button title="Limpar" onPress={limparDados} color='red'/>
+      </View>
+      <View style={styles.outputContainer}>
+        <Text>Saída: {output}</Text>
+      </View>
     </View>
   );
 }
@@ -26,4 +36,17 @@ export default function EntradaSaida() {
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 10, width: '80%' },
+  buttonsContainer: { 
+    flexDirection: 'row', 
+    justifyContent: 'space-around',
+    width: '60%',
+    padding: 20},
+  outputContainer: { 
+    borderColor: '#e6f2e6',
+    backgroundColor: '#c2ffcdff',
+    borderWidth: 2,
+    borderRadius: 5,
+    padding: 10,
+    width: '80%'
+  }
 });

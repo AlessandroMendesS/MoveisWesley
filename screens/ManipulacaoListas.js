@@ -3,7 +3,7 @@ import { View, FlatList, Text, StyleSheet, TouchableOpacity } from 'react-native
 
 export default function ManipulacaoListas() {
   const [mensagem, setMensagem] = useState('');
-  const data = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  const data = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
   const handleItemPress = (item) => {
     setMensagem(`Você clicou em: ${item}`);
