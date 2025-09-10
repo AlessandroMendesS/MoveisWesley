@@ -10,10 +10,11 @@ import GerenciadorLayout from './screens/GerenciadorLayout';
 import ComponentesTela from './screens/ComponentesTela';
 import DialogoModal from './screens/DialogoModal';
 import BarraAcao from './screens/BarraAcao';
-import ControleElementos from './screens/ControleElementos'; // Adicionado
-import TratamentoExcecoes from './screens/TratamentoExcecoes'; // Adicionado
+import ControleElementos from './screens/ControleElementos'; 
+import TratamentoExcecoes from './screens/TratamentoExcecao';
 import ManipulacaoListas from './screens/ManipulacaoListas';
 import EntradaSaida from './screens/EntradaSaida';
+import TratamentoGestual from './screens/TratamentoGestual';
 
 const Drawer = createDrawerNavigator();
 
@@ -31,7 +32,8 @@ export default function App() {
         <Drawer.Screen name="2.2 Controle de Elementos" component={ControleElementos} />
         <Drawer.Screen name="2.2.1 Tratamento de Exceções" component={TratamentoExcecoes} />  
         <Drawer.Screen name="2.2.2 Manipulação de listas" component={ManipulacaoListas} />    
-         <Drawer.Screen name="2.2.3 Entrada e Saídas" component={EntradaSaida} />          
+         <Drawer.Screen name="2.2.3 Entrada e Saídas" component={EntradaSaida} />    
+         <Drawer.Screen name="2.2.4 Tratamento Gestual" component={TratamentoGestual} />      
       </Drawer.Navigator>
     </NavigationContainer>
   );

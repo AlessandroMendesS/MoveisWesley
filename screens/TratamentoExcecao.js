@@ -8,22 +8,34 @@ export default function TratamentoExcecoes() {
   const divisao = () => {
     try {
       const numero = parseFloat(valor);
+
+      // Verificar se é um número válido
       if (isNaN(numero)) {
-        throw new Error("Insira um número!");
+        throw new Error("Insira um número válido!");
       }
-      if (numero == 0) {
+      
+      // Verificar se o número é maior que 0
+      if (numero <= 0) {
         throw new Error("Insira um número maior que 0!");
       }
+      
+      // Realizar a divisão
       const resultado = 100 / numero;
+
+      // Exibir o resultado no toast
       Toast.show({
         type: "success",  
         text1: 'Resultado',
         text2: `100 % por ${numero} é ${resultado}`,
       });
+
+      // Limpar o valor do input após a operação
+      setValor('');
     } catch (erro) {
+      // Exibir erro no toast
       Toast.show({
         type: "error",
-        text1: "Exceção disparada",
+        text1: "Erro",
         text2: erro.message,
       });
     }
@@ -39,7 +51,7 @@ export default function TratamentoExcecoes() {
         onChangeText={setValor}
       />
       <Button title="Dividir" onPress={divisao} />
-      <Toast />
+      <Toast ref={(ref) => Toast.setRef(ref)} />
     </View>
   );
 }
